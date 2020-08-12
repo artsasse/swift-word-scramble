@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var score = 0.0
     
     var body: some View {
         NavigationView{
@@ -30,11 +31,19 @@ struct ContentView: View {
                     Text($0)
                 }
                 
+                Text("Score: \(score, specifier: "%g")")
+                    .font(.title)
+                
             }
             .navigationBarTitle(rootWord)
             .onAppear(perform: startGame).alert(isPresented: $showingError){
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
+            .navigationBarItems(trailing:
+                Button(action: startGame){
+                    Text("Shuffle")
+                }
+            )
         }
     }
     
@@ -60,7 +69,18 @@ struct ContentView: View {
             return
         }
         
+        guard hasEnoughLetters(word: answer) else {
+            wordError(title: "Too easy", message: "Use words with 3 letters or more!")
+            return
+        }
+        
+        guard isDifferent(word: answer) else {
+            wordError(title: "Too easy", message: "You can't use the same word!")
+            return
+        }
+        
         usedWords.insert(answer, at: 0)
+        addScore(word: answer)
         newWord = ""
     }
     
@@ -70,6 +90,7 @@ struct ContentView: View {
                 let allWords = startWords.components(separatedBy: "\n")
                 
                 rootWord = allWords.randomElement() ?? "Capybara"
+                usedWords = []
                 
                 return
             }
@@ -78,6 +99,7 @@ struct ContentView: View {
         fatalError("Could not load start.txt from bundle.")
     }
     
+    // guard functions START
     func isOriginal(word: String) -> Bool {
         !(usedWords.contains(word))
     }
@@ -104,10 +126,24 @@ struct ContentView: View {
         return mispelledRange.location == NSNotFound
     }
     
+    func hasEnoughLetters(word: String) -> Bool {
+        word.count > 2
+    }
+    
+    func isDifferent(word: String) -> Bool {
+        word != rootWord
+    }
+    
+    // guard functions END
+    
     func wordError(title: String, message: String) {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func addScore(word: String) {
+            score = score + pow(2, Double(word.count - 3))
     }
 }
 
