@@ -13,6 +13,7 @@
 		E7B0820F24D4974E003058B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B0820E24D4974E003058B4 /* Assets.xcassets */; };
 		E7B0821224D4974E003058B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B0821124D4974E003058B4 /* Preview Assets.xcassets */; };
 		E7B0821524D4974E003058B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B0821324D4974E003058B4 /* LaunchScreen.storyboard */; };
+		E7EFEEFA24E349B400354B44 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7EFEEF924E349B400354B44 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E7B0821124D4974E003058B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7B0821424D4974E003058B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7B0821624D4974E003058B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7EFEEF924E349B400354B44 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				E7B0820C24D49749003058B4 /* ContentView.swift */,
 				E7B0820E24D4974E003058B4 /* Assets.xcassets */,
 				E7B0821324D4974E003058B4 /* LaunchScreen.storyboard */,
+				E7EFEEF924E349B400354B44 /* start.txt */,
 				E7B0821624D4974E003058B4 /* Info.plist */,
 				E7B0821024D4974E003058B4 /* Preview Content */,
 			);
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B0821524D4974E003058B4 /* LaunchScreen.storyboard in Resources */,
+				E7EFEEFA24E349B400354B44 /* start.txt in Resources */,
 				E7B0821224D4974E003058B4 /* Preview Assets.xcassets in Resources */,
 				E7B0820F24D4974E003058B4 /* Assets.xcassets in Resources */,
 			);
