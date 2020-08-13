@@ -91,6 +91,7 @@ struct ContentView: View {
                 
                 rootWord = allWords.randomElement() ?? "Capybara"
                 usedWords = []
+                score = 0.0
                 
                 return
             }
